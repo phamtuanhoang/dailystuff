@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--First-->
@@ -17,8 +18,22 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b2D-jA-RA3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" id="7i5-wi-gcv">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7i5-wi-gcv" id="5IT-Tw-1sF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="2Ca-BZ-W6G"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="T1V-yM-vEp"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -26,14 +41,23 @@
                             <constraint firstItem="3CR-9z-9cz" firstAttribute="top" secondItem="b2D-jA-RA3" secondAttribute="bottom" id="POH-aD-4XF"/>
                             <constraint firstAttribute="trailing" secondItem="b2D-jA-RA3" secondAttribute="trailing" id="Tz7-v3-wRk"/>
                             <constraint firstAttribute="trailing" secondItem="b2D-jA-RA3" secondAttribute="trailing" id="Y1T-cj-8f2"/>
-                            <constraint firstItem="b2D-jA-RA3" firstAttribute="top" secondItem="IA3-s2-i8k" secondAttribute="bottom" constant="-20" id="Z3c-rs-Dwn"/>
+                            <constraint firstItem="b2D-jA-RA3" firstAttribute="top" secondItem="IA3-s2-i8k" secondAttribute="bottom" id="Z3c-rs-Dwn"/>
                             <constraint firstItem="b2D-jA-RA3" firstAttribute="leading" secondItem="GEg-8c-pxE" secondAttribute="leading" id="ZXy-8M-opB"/>
-                            <constraint firstItem="b2D-jA-RA3" firstAttribute="top" secondItem="GEg-8c-pxE" secondAttribute="top" id="c1U-Cu-sbX"/>
+                            <constraint firstItem="b2D-jA-RA3" firstAttribute="baseline" secondItem="GEg-8c-pxE" secondAttribute="top" id="c1U-Cu-sbX"/>
                             <constraint firstItem="b2D-jA-RA3" firstAttribute="bottom" secondItem="3CR-9z-9cz" secondAttribute="top" id="c8h-tq-ivR"/>
                             <constraint firstItem="b2D-jA-RA3" firstAttribute="leading" secondItem="GEg-8c-pxE" secondAttribute="leading" id="yQ8-6l-ipQ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="c1U-Cu-sbX"/>
+                                <exclude reference="c8h-tq-ivR"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="mainTableView" destination="b2D-jA-RA3" id="c9d-Hl-nud"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,7 +83,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="363" width="216" height="17"/>
+                                <rect key="frame" x="80" y="363" width="216" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
