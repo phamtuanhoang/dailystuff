@@ -23,7 +23,7 @@ var photoTakingHelper: PhotoHelper?
         
         // 1
         let followingQuery = PFQuery(className: "Follow")
-        //followingQuery.whereKey("fromUser", equalTo:PFUser.currentUser()!)
+        followingQuery.whereKey("fromUser", equalTo:PFUser.currentUser()!)
                 
         // 2
         let postsFromFollowedUsers = Post.query()
@@ -31,15 +31,23 @@ var photoTakingHelper: PhotoHelper?
         
         // 3
         let postsFromThisUser = Post.query()
-        //postsFromThisUser!.whereKey("user", equalTo: PFUser.currentUser()!)
+        postsFromThisUser!.whereKey("user", equalTo: PFUser.currentUser()!)
         
         // 4
         let query = PFQuery.orQueryWithSubqueries([postsFromFollowedUsers!, postsFromThisUser!])
         // 5
-        //query.includeKey("user")
+        query.includeKey("user")
         // 6
         query.orderByDescending("createdAt")
         
+    
+        query.findObjectsInBackgroundWithBlock { (result: [PFObject]?,error: NSError?) -> Void in
+            self.posts = result as? [Post] ?? []
+            // 9
+            self.mainTableView.reloadData()
+
+        }
+
         
         
     }

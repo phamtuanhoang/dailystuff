@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         acl.setPublicReadAccess(true)
         PFACL.setDefaultACL(acl, withAccessForCurrentUser: true)
         
+        PFUser.logInWithUsernameInBackground("hoang", password: "123456")
+        
         return true
     }
 

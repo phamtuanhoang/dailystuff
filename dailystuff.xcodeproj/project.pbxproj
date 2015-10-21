@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		516903C61BD797EC00F54488 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516903C51BD797EC00F54488 /* PostTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		5E7590FADDF395B20FEB6ECF /* libPods-dailystuff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C7EDBE57A7C43FCB77EAD3 /* libPods-dailystuff.a */; };
 		F3BC7B961BD534830011C21A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BC7B951BD534830011C21A /* AppDelegate.swift */; };
 		F3BC7B981BD534830011C21A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BC7B971BD534830011C21A /* FirstViewController.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		10C7EDBE57A7C43FCB77EAD3 /* libPods-dailystuff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dailystuff.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		387DF4151E0EDB19CA9D5A10 /* Pods-dailystuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailystuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-dailystuff/Pods-dailystuff.release.xcconfig"; sourceTree = "<group>"; };
+		516903C51BD797EC00F54488 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		F30458B51BD6969E001C2290 /* dailystuff-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dailystuff-Bridging-Header.h"; sourceTree = "<group>"; };
 		F3BC7B921BD534830011C21A /* dailystuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dailystuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BC7B951BD534830011C21A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		516903C41BD797DD00F54488 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				516903C51BD797EC00F54488 /* PostTableViewCell.swift */,
+			);
+			name = CustomCell;
+			sourceTree = "<group>";
+		};
 		D8F950C1E16371D8231C26B8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 		F3BC7B941BD534830011C21A /* dailystuff */ = {
 			isa = PBXGroup;
 			children = (
+				516903C41BD797DD00F54488 /* CustomCell */,
 				F3BC7BC81BD54A6D0011C21A /* Model */,
 				F3BC7BC71BD53C8D0011C21A /* PhotoTakingGroup */,
 				F3BC7B951BD534830011C21A /* AppDelegate.swift */,
@@ -347,6 +358,7 @@
 				F3BC7BC61BD53A9D0011C21A /* PhotoHelper.swift in Sources */,
 				F3BC7B981BD534830011C21A /* FirstViewController.swift in Sources */,
 				F3BC7BCA1BD54A7C0011C21A /* Post.swift in Sources */,
+				516903C61BD797EC00F54488 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
